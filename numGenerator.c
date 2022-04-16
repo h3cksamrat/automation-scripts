@@ -21,10 +21,14 @@ int main(int argc, char* argv[])
 
 void numberGen(int start, int stop) {
    if (start == stop) return;
-   if (start < stop)
-      for (int i = start; i < stop; i++)
-         printf("%d\n", i);
-   if (start > stop)  
-      for (int i = start; i > stop; i--)
-         printf("%d\n", i);
+   switch (start < stop) {
+      case 0:
+         for (int i = start; i > stop; i--)
+            printf("%d\n", i);
+         break;
+      case 1:
+         for (int i = start; i < stop; i++)
+            printf("%d\n", i);
+         break;
+   }
 }
